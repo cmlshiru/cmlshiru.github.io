@@ -3,7 +3,9 @@ import styles from "./Login.module.css";
 import Image from 'next/image';
 
 
-interface LoginProps {}
+interface LoginProps {
+  loginHeadText?:string;
+}
 
 const Login: FC<LoginProps> = () => (
   <div className={styles.Login}>

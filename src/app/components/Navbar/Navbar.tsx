@@ -2,7 +2,9 @@ import React, { FC } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 
-interface NavbarProps {}
+interface NavbarProps {
+  navHeadText?:string;
+}
 
 const Navbar: FC<NavbarProps> = () => (
   <div className={styles.Navbar}>
