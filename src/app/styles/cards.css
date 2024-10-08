@@ -1,0 +1,26 @@
+.card-head {
+    border-radius: 20px 20px 0px 0px;
+    background-color: rgb(26, 191, 241);
+    height: 20%;
+    color: white;
+    font-size:xx-large;
+    font-weight: 700;
+  }
+  
+  .card-body {
+    border-radius: 0px 0px 20px 20px;
+    background-color: white;
+    height: 80%;
+    color: gray;
+    font-size: large;
+  }
+
+  .subtext {
+    font-size: small;
+    text-align: center;
+  }
+
+  .card-price {
+    font-size:xx-large;
+    font-weight: 600;
+  }

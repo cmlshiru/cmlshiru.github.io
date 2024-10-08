@@ -1,0 +1,15 @@
+#user {
+    border-radius: 25px;
+    border: 2px solid rgb(0, 71, 153);
+    padding: 20px; 
+    width: 100%;
+    height: 15px;    
+}
+
+#password {
+    border-radius: 25px;
+    border: 2px solid rgb(0, 71, 153);
+    padding: 20px; 
+    width: 100%;
+    height: 15px;    
+}

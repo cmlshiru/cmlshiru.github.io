@@ -1,95 +1,88 @@
+import Navbar from "./components/Navbar/Navbar";
+import PriceCard from "./components/PriceCard/PriceCard";
 import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const cardsContent = [
+    {
+      id: 1,
+      title: "English Only",
+      price: "$699",
+      texts: [
+        "this is the text 1 from de card",
+        "this is the text 2 from de card",
+        "this is the text 3 from de card",
+      ],
+      buttonTexts: ["3 Payments of $250", "Free 5-day Trial"],
+    },
+    {
+      id: 2,
+      title: "English and Spanish",
+      price: "$999",
+      texts: [
+        "this is the text 1 from de card",
+        "this is the text 2 from de card",
+        "this is the text 3 from de card",
+      ],
+      buttonTexts: ["3 Payments of $350", "Free 5-day Trial"],
+    },
+    {
+      id: 3,
+      title: "Spanish Only",
+      price: "$699",
+      texts: [
+        "this is the text 1 from de card",
+        "this is the text 2 from de card",
+        "this is the text 3 from de card",
+      ],
+      buttonTexts: ["3 Payments of $250", "Free 5-day Trial"],
+    },
+  ];
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="text-center d-block justify-content-center">
+      <Navbar />
+      <div className="w-100 h-100 text-center pt-5 d-flex justify-content-center">
+        <div className="home-page">
+          <div className="col-12 d-flex justify-content-center py-5 px-5">
+            <div className="col-8  my-auto  p-5">
+              <h1 className="home-h1">Train your cleaning team with us</h1>
+              <p className="home-p">
+                Lorem ipsum dolor sit amet consectetur adipiscing, elit magna
+                netus blandit interdum iaculis sed, pulvinar platea at luctus
+                mauris. Commodo eu quisque lacinia et integer laoreet ac nostra
+                sem luctus iaculis imperdiet mollis suscipit, nam sociis non
+                tortor semper quam libero cursus cum interdum molestie sed.
+                Dapibus facilisi ridiculus ut posuere turpis nibh pulvinar
+                magnis dis, dui ultrices eros duis dictum elementum sociosqu
+                commodo.
+              </p>
+            </div>
+            <div className="col-4 p-4">
+              <Image
+                src="/imgs/Bella and Professor poster.jpg"
+                alt="jumping"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-100 h-100 home-img"
+              />
+            </div>
+          </div>
+          <div className="col-12 d-flex justify-content-center price-card-container">
+            {cardsContent.map((cardContent) => (
+              <div key={cardContent.id} className="col-3 p-3">
+                <PriceCard
+                  cardTitle={cardContent.title}
+                  cardPrice={cardContent.price}
+                  cardText={cardContent.texts}
+                  buttonTexts={cardContent.buttonTexts}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
